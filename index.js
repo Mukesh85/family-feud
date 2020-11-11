@@ -1,53 +1,435 @@
 // Forked from https://codepen.io/MacEvelly/pen/rLWeYP
 // Summary of 2017 Ember Community Survey https://www.emberjs.com/ember-community-survey-2017/
 var emberQuestions = {
-    "What version(s) of Ember are used in your apps?": [
-      ["2.11", 42],
-      ["2.10", 22],
-      ["2.8 LTS", 22],
-      ["2.12", 20],
-      ["1.13", 25],
-      ["2.4 LTS", 11]
-    ],
-    "What is the primary language of your server side stack?": [
-      ['Ruby', 38],
-      ['JavaScript', 25],
-      ['Java', 21],
-      ['Python', 14],
-      ['PHP', 13]
-    ],
-    "What is your preferred text editor?": [
-      ['Atom', 38],
-      ['Sublime Text', 27],
-      ['Vim', 27],
-      ['VS Code', 19],
-      ['WebStorm / IntelliJ / Jetbrains', 18],
-      ['Emacs', 4]
-    ],
-    "How can we improve Ember?": [
-      ["Documentation", 30],
-      ["Ember Data", 25],
-      ["Routable Components", 20],
-      ["Performance", 15],
-      ["Marketing", 10],
-      ["Tree Shaking", 5]
-    ],
-    "Which of the following topics would you feel comfortable explaining to a colleague": [
-      ["Routing & the Router", 83],
-      ["Promises", 82],
-      ["Composition with components", 70],
-      ["Component lifecycle", 69],
-      ["Using the ember-data store", 68],
-      ["JavaScript Modules (import, expor, etc.)", 66],
-      ['Writing basic tests', 64],
-      ["Debugging", 63]
-    ],
-    "We segmented responders in Detractors, Passives, and Promoters, and performed similarity analysis on the free-form text responses. What were the top terms for Promoters?": [
-      ["Community", 40],
-      ["Ember CLI", 30],
-      ["Convention over configuration", 20],
-      ["I love it!", 10]
-    ]
+    "Name something you buy that is almost always white": [
+        [
+        "Underwear",
+        18
+        ],
+        [
+        "Toilet Paper",
+        9
+        ],
+        [
+        "Wedding Dress",
+        9
+        ],
+        [
+        "Milk",
+        8
+        ],
+        [
+        "Eggs",
+        7
+        ],
+        [
+        "Bread",
+        6
+        ],
+        [
+        "Sheets",
+        6
+        ],
+        [
+        "Flour",
+        5
+        ],
+        [
+        "Paper",
+        5
+        ],
+        [
+        "Sugar",
+        3
+        ],
+        [
+        "Tissues",
+        3
+        ],
+        [
+        "Socks",
+        3
+        ]
+        ],
+        "Name something people do when they have extra time in the morning": [
+            [
+            "Read",
+            53
+            ],
+            [
+            "Sleep",
+            10
+            ],
+            [
+            "Eat",
+            9
+            ],
+            [
+            "Exercise",
+            8
+            ],
+            [
+            "Watch TV",
+            6
+            ],
+            [
+            "Drink Coffee",
+            5
+            ],
+            [
+            "Clean",
+            3
+            ]
+            ],
+            "Name something people do to entertain a baby": [
+                [
+                "Sing",
+                34
+                ],
+                [
+                "Make Faces",
+                23
+                ],
+                [
+                "Play With It",
+                9
+                ],
+                [
+                "Talk To It",
+                8
+                ],
+                [
+                "Rock It",
+                6
+                ],
+                [
+                "Make Funny Noises",
+                5
+                ],
+                [
+                "Shake a Rattle",
+                4
+                ],
+                [
+                "Bounce",
+                3
+                ],
+                [
+                "Tickle",
+                2
+                ],
+                [
+                "Peek A Boo",
+                2
+                ]
+                ],
+                "Name something you don't do as much of in cold weather": [
+                    [
+                    "Garden",
+                    26
+                    ],
+                    [
+                    "Swimming",
+                    24
+                    ],
+                    [
+                    "Walk",
+                    14
+                    ],
+                    [
+                    "Cookout",
+                    6
+                    ],
+                    [
+                    "Sunbathing",
+                    5
+                    ],
+                    [
+                    "Bicycling",
+                    4
+                    ],
+                    [
+                    "Picnic",
+                    3
+                    ],
+                    [
+                    "Golf",
+                    3
+                    ]
+                    ],
+        "Name an occupation whose workers deal mostly with strangers": [
+                        [
+                        "Sales Clerk",
+                        33
+                        ],
+                        [
+                        "Police",
+                        14
+                        ],
+                        [
+                        "Flight Attendant",
+                        7
+                        ],
+                        [
+                        "Waiter",
+                        6
+                        ],
+                        [
+                        "Telephone Operator",
+                        5
+                        ],
+                        [
+                        "Hotel Clerk",
+                        4
+                        ],
+                        [
+                        "Banker",
+                        3
+                        ],
+                        [
+                        "Nurse",
+                        3
+                        ]
+                        ],
+                        "Name something people put oil on": [
+                            [
+                            "Body",
+                            52
+                            ],
+                            [
+                            "Salad",
+                            30
+                            ],
+                            [
+                            "Frying Pan",
+                            4
+                            ],
+                            [
+                            "Door Hinges",
+                            3
+                            ],
+                            [
+                            "Hair",
+                            3
+                            ],
+                            [
+                            "Furniture",
+                            2
+                            ]
+                            ],
+                            "Name an occupation whose people have big egos": [
+                                [
+                                "Actor",
+                                30
+                                ],
+                                [
+                                "Attorney",
+                                23
+                                ],
+                                [
+                                "Physician",
+                                9
+                                ],
+                                [
+                                "Politician",
+                                8
+                                ],
+                                [
+                                "Pro Athlete",
+                                7
+                                ],
+                                [
+                                "Model",
+                                6
+                                ],
+                                [
+                                "Business",
+                                4
+                                ],
+                                [
+                                "Police",
+                                3
+                                ],
+                                [
+                                "Musician",
+                                2
+                                ]
+                                ],
+                                "Name something you'd cry over losing": [
+                                    [
+                                    "Wedding Ring",
+                                    41
+                                    ],
+                                    [
+                                    "Loved One",
+                                    22
+                                    ],
+                                    [
+                                    "Pet",
+                                    9
+                                    ],
+                                    [
+                                    "Wallet",
+                                    7
+                                    ],
+                                    [
+                                    "Home",
+                                    4
+                                    ],
+                                    [
+                                    "Job",
+                                    4
+                                    ],
+                                    [
+                                    "Purse",
+                                    3
+                                    ]
+                                    ],
+                                    "Tell me a food people eat and then regret later": [
+                                        [
+                                        "Onions",
+                                        20
+                                        ],
+                                        [
+                                        "Chili",
+                                        17
+                                        ],
+                                        [
+                                        "Beans",
+                                        14
+                                        ],
+                                        [
+                                        "Ice Cream",
+                                        6
+                                        ],
+                                        [
+                                        "Peppers",
+                                        6
+                                        ],
+                                        [
+                                        "Pizza",
+                                        6
+                                        ],
+                                        [
+                                        "Cake",
+                                        5
+                                        ],
+                                        [
+                                        "Cabbage",
+                                        5
+                                        ],
+                                        [
+                                        "Chocolate",
+                                        4
+                                        ],
+                                        [
+                                        "Cucumbers",
+                                        4
+                                        ],
+                                        [
+                                        "Tacos",
+                                        3
+                                        ],
+                                        [
+                                        "Garlic",
+                                        2
+                                        ]
+                                        ],
+                                        "Name something women find hard to resist": [
+                                            [
+                                            "Shopping",
+                                            27
+                                            ],
+                                            [
+                                            "Candy",
+                                            20
+                                            ],
+                                            [
+                                            "Men",
+                                            17
+                                            ],
+                                            [
+                                            "Jewelry",
+                                            13
+                                            ],
+                                            [
+                                            "Clothes",
+                                            10
+                                            ],
+                                            [
+                                            "Gossip",
+                                            2
+                                            ],
+                                            [
+                                            "Money",
+                                            2
+                                            ]
+                                            ],
+                                            "Tell us something a mother says to her child over and over again": [
+                                                [
+                                                "No",
+                                                30
+                                                ],
+                                                [
+                                                "Don't",
+                                                15
+                                                ],
+                                                [
+                                                "I Love You",
+                                                10
+                                                ],
+                                                [
+                                                "Be Quiet",
+                                                8
+                                                ],
+                                                [
+                                                "Clean Your Room",
+                                                7
+                                                ],
+                                                [
+                                                "Don't Touch",
+                                                7
+                                                ],
+                                                [
+                                                "Brush Teeth",
+                                                3
+                                                ],
+                                                [
+                                                "Wash Hand",
+                                                2
+                                                ]
+                                                ],
+                                                "Name something that easy to do forwards, but hard backwards": [
+                                                    [
+                                                    "Walk",
+                                                    24
+                                                    ],
+                                                    [
+                                                    "Run",
+                                                    19
+                                                    ],
+                                                    [
+                                                    "Drive",
+                                                    14
+                                                    ],
+                                                    [
+                                                    "Write",
+                                                    11
+                                                    ],
+                                                    [
+                                                    "Skate",
+                                                    10
+                                                    ],
+                                                    [
+                                                    "Ride Bicycle",
+                                                    9
+                                                    ],
+                                                    [
+                                                    "Talk",
+                                                    4
+                                                    ]
+                                                    ]
+    
   };
 
   var app = {
@@ -244,6 +626,7 @@ var emberQuestions = {
       app.board.find('#awardTeam2'  ).on('click', app.awardPoints);
       $('#no').on('click', app.playWrong)
     }
+    
   };
 var fbApp = firebase.initializeApp(firebaseConfig);
 app.init();
