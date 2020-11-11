@@ -54,6 +54,7 @@ var emberQuestions = {
     version: 1,
     currentQ: 0,
     jsonFile:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/40041/FF3.json",
+    strikeCount: 0,
     board: $("<div class='gameBoard'>"+
              
                "<!--- Scores --->"+
@@ -71,6 +72,12 @@ var emberQuestions = {
                  "<div class='col1'></div>"+
                  "<div class='col2'></div>"+
                "</div>"+
+
+               "<!--- Strikes --->" + 
+               "<div class='strike_cntr'>" +
+                "<div class='strike_wrap'>" +
+                "</div>" +
+                "</div>" +
              
                "<!--- Buttons --->"+
                "<div class='btnHolder'>"+
@@ -217,7 +224,18 @@ var emberQuestions = {
       document.getElementById('right').play()
     },
      playWrong() {
-      document.getElementById('wrong').play()
+         let strikes = app.board.find('.strike_wrap')
+         let strike = $('<div class="strike"></div>')
+
+         if(app.strikeCount < 3) {
+             app.strikeCount += 1;
+             strike.appendTo(strikes);
+             strikes.css('opacity', 1);
+             strikes.animate({opacity: 0}, 2000)
+             document.getElementById('wrong').play()
+         }
+
+      
     },
     // Inital function
     init: function(){
