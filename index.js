@@ -242,10 +242,6 @@ var emberQuestions = {
       app.board.find('#newQuestion' ).on('click', app.changeQuestion);
       app.board.find('#awardTeam1'  ).on('click', app.awardPoints);
       app.board.find('#awardTeam2'  ).on('click', app.awardPoints);
-      console.log(firebaseConfig);
-      //var fbApp = firebase.initializeApp(firebaseConfig);
-      var a = fbApp.database().ref("rooms");
-      console.log(fbApp);
       $('#no').on('click', app.playWrong)
     }
   };
