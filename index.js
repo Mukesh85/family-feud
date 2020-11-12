@@ -429,7 +429,7 @@ var emberQuestions = {
                                                     4
                                                     ]
                                                     ]
-    
+
   };
 
   var app = {
@@ -597,25 +597,28 @@ var emberQuestions = {
       });
     },
     changeQuestion: function(){
-      app.currentQ++
-      app.makeQuestion(app.currentQ)
+        app.currentQ++;
+        document.getElementsByClassName("strike_wrap")[0].innerHTML = "";
+        app.strikeCount = 0;
+        app.makeQuestion(app.currentQ)
     },
     playRight() {
       document.getElementById('right').play()
     },
      playWrong() {
-         let strikes = app.board.find('.strike_wrap')
-         let strike = $('<div class="strike"></div>')
-
+         let strikes = app.board.find('.strike_wrap');
+         let strike = $('<div class="strike"></div>');
          if(app.strikeCount < 3) {
              app.strikeCount += 1;
              strike.appendTo(strikes);
              strikes.css('opacity', 1);
-             strikes.animate({opacity: 0}, 2000)
+             strikes.animate({opacity: 0}, 2000);
              document.getElementById('wrong').play()
+         } else {
+             document.getElementsByClassName("strike_wrap")[0].innerHTML = "";
+             app.strikeCount = 0;
+             app.playWrong();
          }
-
-
     },
     // Inital function
     init: function(){
@@ -626,8 +629,18 @@ var emberQuestions = {
       app.board.find('#awardTeam2'  ).on('click', app.awardPoints);
       $('#no').on('click', app.playWrong)
     }
-    
+
   };
+
+var open = function(num) {
+    document.getElementsByClassName("cardHolder")[num - 1].click()
+};
+
+var wrong = function() {
+    $('#no').click();
+};
+
+
 var fbApp = firebase.initializeApp(firebaseConfig);
 app.init();
   //http://www.qwizx.com/gssfx/usa/ff.htm
