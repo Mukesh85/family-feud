@@ -635,11 +635,15 @@ var emberQuestions = {
 var open = function(num) {
     document.getElementsByClassName("cardHolder")[num - 1].click()
 };
-
 var wrong = function() {
     $('#no').click();
 };
-
+var showOptions = function () {
+    var n = emberQuestions[document.getElementsByClassName("question")[0].innerText]
+    for (var i = 0; i < n.length; i++) {
+        console.log(n[i][0], i + 1)
+    }
+};
 
 var fbApp = firebase.initializeApp(firebaseConfig);
 app.init();
